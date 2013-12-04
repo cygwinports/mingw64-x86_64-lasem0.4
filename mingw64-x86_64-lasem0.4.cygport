@@ -1,0 +1,17 @@
+CROSS_HOST="x86_64-w64-mingw32"
+ORIG_PN="lasem"
+inherit cross gnome2
+
+NAME="mingw64-x86_64-lasem0.4"
+VERSION=0.4.1
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GObject SVG/MathML library for Win64 toolchain"
+DESCRIPTION="Lasem aims to be a C/Gobject based SVG/Mathml renderer and editor,
+supporting CSS style sheets (only rendering is implemented for now). It uses
+cairo and pango as it's rendering abstraction layer, and then support numerous
+output formats: xlib, PNG, SVG, PDF, PS, EPS..."
+
+PATCH_URI="0.4.1-no-undefined.patch"
+
+MAKEOPTS+=" bin_PROGRAMS= lasemdocdir=\$(docdir)"

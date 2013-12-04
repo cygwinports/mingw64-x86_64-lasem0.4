@@ -1,0 +1,11 @@
+--- origsrc/lasem-0.4.1/src/Makefile.am	2012-12-03 09:44:50.000000000 -0600
++++ src/lasem-0.4.1/src/Makefile.am	2012-12-27 00:17:14.753866600 -0600
+@@ -268,7 +268,7 @@ liblasem_@LASEM_API_VERSION@_la_SOURCES
+ liblasem_@LASEM_API_VERSION@_la_HEADERS = $(LASEM_DOM_HDRS)
+ liblasem_@LASEM_API_VERSION@_la_HEADERS += lsmdomenumtypes.h
+ 
+-liblasem_@LASEM_API_VERSION@_la_LDFLAGS = -version-info $(LASEM_LIBTOOL_VERSION)
++liblasem_@LASEM_API_VERSION@_la_LDFLAGS = -version-info $(LASEM_LIBTOOL_VERSION) -no-undefined
+ 
+ lsmdomenumtypes.h: lsmdomenumtypes.h.template $(LASEM_DOM_HDRS) $(GLIB_MKENUMS)
+ 	$(AM_V_GEN) (cd $(srcdir) && $(GLIB_MKENUMS) --template lsmdomenumtypes.h.template $(LASEM_DOM_HDRS)) > $@
